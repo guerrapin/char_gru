@@ -2,7 +2,7 @@
 
 Course project on recurrent neural networks.
 
-Given a sequence of characters, the objective is to predict the next character in the sequence. The code is written in in Lua and requires [Torch](http://torch.ch/).
+Given a sequence of characters, the objective is to predict the next character in the sequence. The code is written in Lua and requires [Torch](http://torch.ch/).
 
 ### Infos
 
