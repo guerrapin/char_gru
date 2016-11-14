@@ -18,4 +18,13 @@ function utils.TableConcat(t1,t2)
    return t1
 end
 
+function utils.accuracy(y, out)
+   -- return the accuracy of the prediction "out" compared to the label "y" (i.e. a value between 0 and 1)
+
+   accuracy_value = torch.mean(torch.eq(torch.sign(out),y):double())
+
+   return accuracy_value
+
+end
+
 return utils

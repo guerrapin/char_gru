@@ -1,6 +1,5 @@
 require 'nngraph'
 require 'gnuplot'
-require 'accuracy_function'
 
 local model_utils = require 'model_utils'
 local utils = require 'utils'
@@ -132,7 +131,7 @@ function Eval(xtest,ytest)
          local distrib = torch.exp(output[num_seq]) -- exponential because LogSoftMax was used
          local index_picked = torch.multinomial(distrib,1)
 
-         acc[num_seq] = acc[num_seq] + accuracy(index_picked:double(),targ[num_seq])/test_size
+         acc[num_seq] = acc[num_seq] + utils.accuracy(index_picked:double(),targ[num_seq])/test_size
       end
    end
 

@@ -1,3 +1,6 @@
+-- Source : https://github.com/oxford-cs-ml-2015/practical6
+
+
 -- loader for character-level language models
 
 require 'torch'
