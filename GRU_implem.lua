@@ -15,6 +15,9 @@ cmd:option('-learning_rate',1e-2,"learning rate")
 cmd:option('-seq_length',5,"number of characters per sequence")
 cmd:option('-ratio',0.8,"train/total ratio. To split the dataset in train and test sets")
 cmd:option('-latent_dim',100,"dimension of the latent state of the RNN")
+cmd:option('-data','data.t7','tensor containing the pre-formated data')
+cmd:option('-vocab','vocab.t7','translation between characters and indexes')
+
 local opt = cmd:parse(arg)
 print("Parameters of this experiment :")
 print(opt)
@@ -23,7 +26,7 @@ print(opt)
 -------------- DATA RESHAPING STEP ----------------------
 ---------------------------------------------------------
 
-local data=CharLMMinibatchLoader.create("data.t7","vocab.t7",opt.batch_size,opt.seq_length)
+local data=CharLMMinibatchLoader.create(opt.data,opt.vocab,opt.batch_size,opt.seq_length)
 
 local vocab_size = data.vocab_size
 local n_batches = table.getn(data.x_batches)
